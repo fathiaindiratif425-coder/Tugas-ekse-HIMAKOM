@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio Fathia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<script>
+function toggleInfo(element) {
+    const info = element.parentElement.querySelector(".contact-info");
+    info.classList.toggle("show");
+}
+</script>
+<script>
+function toggleAssignment(id) {
+    const content = document.getElementById(id);
+
+    // tutup semua dulu
+    document.querySelectorAll(".assignment-content").forEach(el => {
+        if (el.id !== id) {
+            el.style.display = "none";
+        }
+    });
+
+    // toggle yang diklik
+    content.style.display =
+        content.style.display === "block" ? "none" : "block";
+}
+</script>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#skill">Skill</a></li>
+        <li><a href="#penugasan">Penugasan</a></li>
+        <li><a href="#portofolio">Portofolio</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+    </ul>
+</nav>
+
+<!-- PROFIL (Gabungan Halo + Profil Diri) -->
+<section id="profil" class="hero">
+    <div class="hero-text">
+        <h1>Hello, I'm Fathia!</h1>
+        <p>
+            Saya adalah mahasiswa jurusan Teknik Informatika di POLBAN.
+        Saya tertarik pada UI/UX design, saya juga menyukai tantangan dan hal baru karena itu dapat membuat saya lebih berkembang.        </p>
+        <a href="#skill" class="explore-btn">Explore More</a>
+
+    </div>
+
+</section>
+
+<section id="skill">
+    <h2>Skill</h2>
+
+    <div class="grid-3">
+        <div class="box">
+            <h3>UI/UX Design</h3>
+            <p>Mendesain tampilan yang user-friendly dan aesthetic.</p>
+        </div>
+
+        <div class="box">
+            <h3>HTML</h3>
+            <p>Membangun struktur website yang rapi dan terorganisir.</p>
+        </div>
+
+        <div class="box">
+            <h3>CSS</h3>
+            <p>Mengatur tampilan visual dengan layout modern dan responsif.</p>
+        </div>
+
+        <div class="box">
+            <h3>C++</h3>
+            <p>Pemrograman dasar hingga pengolahan data sederhana.</p>
+        </div>
+
+          <div class="box">
+            <h3>Figma</h3>
+            <p>Mendesain prototype UI/UX dengan alat desain digital.</p>
+        </div>
+
+        <div class="box">
+            <h3>Problem Solving</h3>
+            <p>Mampu menganalisis masalah dan mencari solusi efektif.</p>
+        </div>
+
+        <div class="box">
+            <h3>Adaptif</h3>
+            <p>Cepat belajar dan menyesuaikan diri dengan teknologi baru.</p>
+        </div>
+    </div>
+</section>
+
+<section id="penugasan">
+    <h2>Penugasan</h2>
+
+    <div class="assignment-container">
+
+        <!-- TOR -->
+        <div class="assignment-box" onclick="toggleAssignment('tor')">
+            Penugasan 1 — TOR
+        </div>
+
+        <div id="tor" class="assignment-content">
+            <iframe src="TOR FATHIA.pdf" width="100%" height="400px"></iframe>
+            <a href="TOR FATHIA.pdf" download class="download-btn">Download TOR</a>
+        </div>
+
+
+        <!-- POSTER -->
+        <div class="assignment-box" onclick="toggleAssignment('poster')">
+            Penugasan 2 — Poster
+        </div>
+
+        <div id="poster" class="assignment-content">
+            <img src="poster.jpeg" alt="Poster" class="assignment-img">
+            <a href="poster.jpeg" download class="download-btn">Download Poster</a>
+        </div>
+
+
+        <!-- VIDEO -->
+        <div class="assignment-box" onclick="toggleAssignment('video')">
+            Penugasan 3 — Video
+        </div>
+
+        <div id="video" class="assignment-content">
+            <video width="100%" controls>
+                <source src="video2.mp4" type="video/mp4">
+            </video>
+            <a href="video2.mp4" download class="download-btn">Download Video</a>
+        </div>
+
+    </div>
+</section>
+
+<section id="portofolio">
+    <h2>Portofolio</h2>
+
+    <div class="grid-3">
+        <div class="box">
+            <h3>Arkavidia 2026</h3>
+            <p>Peserta perlombaan coding dengan cabang lomba UXvidia</p>
+        </div>
+
+        <div class="box">
+            <h3>Expo kimia UPI 2024</h3>
+            <p>Semifinalis perlombaan kimia se-Indonesia</p>
+        </div>
+
+        <div class="box">
+            <h3>OSIS (Origanisasi Siswa Intra Sekolah)</h3>
+            <p>Anggota aktif OSIS seksi bidang bahasa 2022-2024</p>
+        </div>
+
+        <div class="box">
+            <h3>ECC (English Convertation Club)</h3>
+            <p>Anggota aktif ECC 2022-2024</p>
+        </div>
+    </div>
+</section>
+
+<section id="kontak">
+    <h2>Contact Me</h2>
+
+    <div class="contact-container">
+
+        <div class="contact-box">
+            <i class="fab fa-instagram"></i>
+            <p>@fathiands</p>
+        </div>
+
+        <div class="contact-box">
+            <i class="fab fa-whatsapp"></i>
+            <p>+62 898-899-3889</p>
+        </div>
+
+        <div class="contact-box">
+            <i class="fas fa-envelope"></i>
+            <p>fathia.indira.tif425@polban.ac.id</p>
+        </div>
+
+    </div>
+</section>
+
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+    const trigger = window.innerHeight * 0.85;
+
+    sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+
+        if(top < trigger){
+            section.classList.add("show");
+        }
+    });
+});
+</script>
+</body>
+</html>

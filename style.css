@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Quicksand:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: rgba(247, 244, 213, 0.9);
+    color: #2f3e46;
+    scroll-behavior: smooth;
+
+}
+
+/* ================= NAVBAR ================= */
+nav {
+    background: rgba(247, 244, 213, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #355070;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e5989b;
+}
+
+/* ================= EXPLORE BUTTON ================= */
+
+.explore-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 40px;
+
+    background: linear-gradient(135deg, #f7f2ea, #fbfcf5);
+    color: rgb(52, 53, 82);
+    text-decoration: none;
+
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    border-radius: 50px; /* ini bikin oval */
+    transition: 0.4s ease;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.explore-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* ================= PENUGASAN ================= */
+
+.assignment-container {
+    width: 70%;
+    margin: 50px auto;
+}
+
+.assignment-box {
+    background: linear-gradient(135deg, #ffffff, #fffdfa);
+    padding: 50px;
+    margin: 20px 0;
+    border-radius: 60px; /* lonjong */
+    text-align: center;
+    font-weight: 1000;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.assignment-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* konten tersembunyi */
+.assignment-content {
+    display: none;
+    margin: 20px 0 40px 0;
+    padding: 20px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+.assignment-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+/* tombol download */
+.download-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    background: #355070;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: #e5989b;
+}
+
+/* animasi */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+
+    background: url("bg3.jpeg") no-repeat center center;
+    background-size: cover;
+    position: relative;
+
+    animation: zoomBg 15s ease-in-out infinite alternate;
+}
+
+/* zoom halus */
+@keyframes zoomBg {
+    from { background-size: 100%; }
+    to { background-size: 110%; }
+}
+
+/* overlay biar teks kebaca */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* ================= HERO TEXT ================= */
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1.5s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-text h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #314b58;
+    margin-bottom: 20px;
+
+    text-shadow: 
+        2px 2px 15px rgba(0,0,0,0.2),
+        0 0 30px rgba(255,255,255,0.6);
+}
+
+.hero-text p {
+    font-size: 24px;
+    font-weight: 500;
+    color: #1a4630;
+}
+
+/* ================= SECTION UMUM ================= */
+section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+/* ================= GRID ================= */
+.grid-3 {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+/* ================= BOX ================= */
+.box {
+    background: rgba(255, 255, 255, 0.85);
+    width: 250px;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.4s ease;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #355070;
+}
+
+.box p {
+    font-size: 16px;
+    color: #344e41;
+}
+
+/* ================= SECTION TITLE ================= */
+section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* ================= CONTACT KOTAK ================= */
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.contact-box {
+    width: 220px;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.4s ease;
+}
+
+.contact-box i {
+    font-size: 40px;
+    color: #355070;
+    margin-bottom: 20px;
+}
+
+.contact-box p {
+    font-size: 14px;
+    color: #2f3e46;
+    word-break: break-word;
+}
+
+.contact-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #d0f4de, #bde0fe);
+}
+
+
+/* ================= CONTACT CLICK INFO ================= */
+
+.contact-item {
+    width: 220px;   /* ini bikin semua sama lebar */
+    text-align: center;
+}
+
+.contact-info {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #173861;
+
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s ease;
+
+    word-wrap: break-word; /* biar email panjang turun rapi */
+}
+
+
+.contact-info.show {
+    opacity: 1;
+    max-height: 50px;
+}
