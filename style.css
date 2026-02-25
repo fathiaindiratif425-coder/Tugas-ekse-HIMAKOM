@@ -3,8 +3,8 @@
 body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
-    background: rgba(247, 244, 213, 0.9);
-    color: #2f3e46;
+    background: rgba(255, 252, 222, 0.9);
+    color: #374b57;
     scroll-behavior: smooth;
 
 }
@@ -72,14 +72,36 @@ nav ul li a:hover {
 }
 
 .assignment-box {
-    background: linear-gradient(135deg, #ffffff, #fffdfa);
-    padding: 50px;
-    margin: 20px 0;
-    border-radius: 60px; /* lonjong */
+    position: relative; /* WAJIB biar kucing bisa absolute */
+    background: linear-gradient(135deg, #ffffff, #fffffd);
+    padding: 30px;
+    margin: 25px 0;
+    border-radius: 50px;
     text-align: center;
-    font-weight: 1000;
+    font-weight: 800;
     cursor: pointer;
     transition: 0.3s ease;
+    overflow: hidden;
+}
+
+.assignment-box::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+
+    background: url("catt.png") no-repeat center;
+    background-size: contain;
+
+    right: 20px;   /* posisi kanan */
+    bottom: -10px; /* agak keluar dikit */
+
+    opacity: 0.9;
+}
+
+.assignment-box:hover::after {
+    transform: translateY(-5px);
+    transition: 0.3s;
 }
 
 .assignment-box:hover {
@@ -307,3 +329,6 @@ section h2 {
     opacity: 1;
     max-height: 50px;
 }
+
+
+
